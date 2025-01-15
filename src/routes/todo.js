@@ -23,7 +23,7 @@ router.post('/', (req, res) => {
     const newTodo = {
         id: todos.length + 1,
         title,
-        completed: true
+        completed: true //2. false
     };
     todos.push(newTodo);
 
@@ -41,7 +41,7 @@ router.patch('/:id', (req, res) => {
     }
 
     if (completed !== undefined) {
-        todo.completed = true;
+        todo.completed = true; //1. !todo.completed;
     }
 
     res.json(todo);
